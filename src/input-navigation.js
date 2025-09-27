@@ -92,9 +92,7 @@ const setSelectedPlatformByIndex = (
   platformIndex = selectedPlatformIndex,
   romIndex = 0
 ) => {
-  selectedPlatformIndex = platformIndex;
-  selectedPlatform = platforms[platformIndex];
-  setSelectedPlatform(selectedPlatform, romIndex);
+  setSelectedPlatform(platforms[platformIndex], romIndex);
 };
 
 /* rom selection */
