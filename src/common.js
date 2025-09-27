@@ -121,7 +121,7 @@ const generatePlatformLink = (ulEl, platform) => {
     `);
   }
   anchorEl.click(() => {
-    generatePlatformDetails(platform);
+    setSelectedPlatform(platform);
   });
 
   const liEl = jQuery(`<li class="anchor"></li>`);

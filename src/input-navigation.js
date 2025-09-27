@@ -78,16 +78,21 @@ const selectNextPlatform = () => {
   );
 };
 
+const setSelectedPlatform = (selectedPlatform, romIndex = 0) => {
+  setSelectedRomByIndex(
+    romIndex >= 0 ? romIndex : selectedPlatform.roms.length - 1
+  );
+  setHash(sanitizePlatformName(selectedPlatform.name));
+  generatePlatformDetails(selectedPlatform);
+};
+
 const setSelectedPlatformByIndex = (
   platformIndex = selectedPlatformIndex,
   romIndex = 0
 ) => {
   selectedPlatformIndex = platformIndex;
   selectedPlatform = platforms[platformIndex];
-  setSelectedRomByIndex(
-    romIndex >= 0 ? romIndex : selectedPlatform.roms.length - 1
-  );
-  setHash(sanitizePlatformName(selectedPlatform.name));
+  setSelectedPlatform(selectedPlatform, romIndex);
 };
 
 /* rom selection */
