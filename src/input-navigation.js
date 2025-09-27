@@ -78,7 +78,9 @@ const selectNextPlatform = () => {
   );
 };
 
-const setSelectedPlatform = (selectedPlatform, romIndex = 0) => {
+const setSelectedPlatform = (platform, romIndex = 0) => {
+  selectedPlatformIndex = platforms.indexOf(platform);
+  selectedPlatform = platform;
   setSelectedRomByIndex(
     romIndex >= 0 ? romIndex : selectedPlatform.roms.length - 1
   );
